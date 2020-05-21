@@ -30,6 +30,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         
+        // ARKit 3 People Occlusion
+        configuration.frameSemantics = .personSegmentationWithDepth
+        
         // Run the view's session
         sceneView.session.run(configuration)
     }
